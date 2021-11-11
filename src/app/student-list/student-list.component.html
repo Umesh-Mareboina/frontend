@@ -1,0 +1,26 @@
+<br><h2>Registered User Info</h2>
+<br>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th> Gender</th>
+            <th> Email Id</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let student of students" >             
+            <td> {{ student.firstName }} </td>
+            <td> {{ student.lastName }} </td>
+            <td> {{ student.gender }} </td>
+            <td> {{ student.emailId }} </td>
+            <td>
+                <button (click) = "updateStudent(student.id)" class = "btn btn-warning" style="margin-left: 10px"> View</button>&nbsp;           
+                <button (click) = "deleteStudent(student.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>

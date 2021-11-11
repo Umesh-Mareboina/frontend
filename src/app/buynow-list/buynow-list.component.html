@@ -1,0 +1,35 @@
+<br><h2>Ordered User Info</h2><br>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Book Name</th>
+            <th> User Name </th>
+            <th> Email Id </th>
+            <th> Phone Number</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Zip-Code</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let buynow of buynows" >
+            <td> {{ buynow.bookName }} </td>
+            <td> {{ buynow.userName }} </td>
+            <td> {{ buynow.emailId }} </td>
+            <td> {{ buynow.phoneNumber }} </td>
+            <td> {{ buynow.address}} </td>
+            <td> {{ buynow.state}} </td>
+            <td> {{ buynow.city}} </td>
+            <td> {{ buynow.zipCode}} </td>
+            <td>
+                
+                <button (click) = "updateBuynow(buynow.id)" class = "btn btn-warning" style="margin-left: 10px"> View</button>
+                <button (click) = "deleteBuynow(buynow.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <!-- <button (click) = "updateStudent(student.id)" class = "btn btn-danger" style="margin-left: 10px"> Update</button> -->
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
