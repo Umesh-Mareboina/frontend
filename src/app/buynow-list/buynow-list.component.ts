@@ -31,7 +31,10 @@ export class BuynowListComponent implements OnInit {
   buynowDetails(id: number){
     this.router.navigate(['buynow-details', id]);
   }
-
+back()
+{
+  this.router.navigate(['admin-page']);
+}
   updateBuynow(id: number){
     this.router.navigate(['update-buynow', id]);
   }

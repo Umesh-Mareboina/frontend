@@ -31,21 +31,20 @@ export class BuynowComponent implements OnInit {
   saveBuynow() {
     this.buynowService.createBuyer(this.Buynow).subscribe( data =>{
       console.log(data);
-      this.goToHome();
+      this.goToBooks();
     },
     error => {
       return console.log(error);
     });
   }
-  goToHome() {
-    this.router.navigate(['/home']);
+  goToBooks() {
+    this.router.navigate(['/books']);
   }
-  
 
 
   onSubmit(){
     
-    if(this.Buynow.bookName && this.Buynow.userName && this.Buynow.emailId&& this.Buynow.phoneNumber && this.Buynow.address && this.Buynow.state && this.Buynow.city && this.Buynow.zipCode ) 
+    if(this.Buynow.emailId&& this.Buynow.phoneNumber && this.Buynow.address && this.Buynow.state && this.Buynow.city && this.Buynow.zipCode ) 
     {
       console.log(this.Buynow);
       this.saveBuynow();

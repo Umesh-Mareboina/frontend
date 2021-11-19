@@ -6,20 +6,20 @@
 
         <div class="form-group">
             <label>Book Name</label>
-            <input type="text" placeholder="Enter Book Name" class ="form-control" id = "bookName" name="bookName"
+            <input type="text" class ="form-control" id = "bookName" name="bookName"
             [(ngModel)] = "Buynow.bookName" disabled>
         </div>
     
         <div class="form-group">
             <label> User Name</label>
-            <input type="text"  placeholder="Enter your User Name" class ="form-control" id = "userName" name="userName"
+            <input type="text"  class ="form-control" id = "userName" name="userName"
                         [(ngModel)] = "Buynow.userName" disabled>
         </div>
     
         <div class="form-group">
             <label for="emailId" class="control-label"> Email Id</label>
-            <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Your Email Id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-             #emailId="ngModel" [(ngModel)] = "Buynow.emailId"  type="email" class ="form-control" >
+            <input  id = "emailId" name="emailId"  (input)="validateemailId()"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             #emailId="ngModel" [(ngModel)] = "Buynow.emailId"  type="email" class ="form-control" disabled>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Input a Valid Email Id
@@ -29,7 +29,7 @@
 
         <div class="form-group">
             <label >Phone Number</label>
-            <input type="tel"  placeholder="987-654-3210" class="form-control" pattern="^\d{3}-\d{3}-\d{4}$" id = "phoneNumber" name="phoneNumber"
+            <input type="tel"  placeholder="+91" class="form-control" pattern="^\d{3}-\d{3}-\d{4}$" id = "phoneNumber" name="phoneNumber"
             [(ngModel)] = "Buynow.phoneNumber">
         </div>
 
@@ -38,28 +38,61 @@
 
         <div class="form-group">
             <label >Address</label>
-            <textarea name = "address" class ="form-control" placeholder="Enter your address"
+            <textarea name = "address" class ="form-control" 
             [(ngModel)] = "Buynow.address">
              </textarea>
         </div>
  
 
         <div class="form-group">
-            <label>State</label>
-            <input type="text"  placeholder="Enter your state Name" class ="form-control" id = "state" name="state"
-                        [(ngModel)] = "Buynow.state">
-        </div>
+            <label for="state">State</label>
+            <select class="form-control" id="state" name="state" [(ngModel)] = "Buynow.state">
+                
+                <option>--none--</option>
+              <option>Andhra Pradesh</option>
+              <option> Arunachal Pradesh</option>
+              <option>Assam</option>
+              <option>Bihar</option>
+              <option>Chhattisgarh</option>
+              <option>Goa</option>
+              <option>Gujarat</option>
+              <option>Haryana</option>
+              <option>Himachal Pradesh</option>
+              <option> Jammu and Kashmir</option>
+              <option>Jharkhand</option>
+              <option>Karnataka</option>
+              <option>Kerala</option>
+              <option>Madhya Pradesh </option>
+              <option>Maharashtra </option>
+              <option>Manipur</option>
+              <option>Meghalaya</option>
+              <option>Mizoram</option>
+              <option>Nagaland</option>
+              <option>Odisha</option>
+              <option>Punjab</option>
+              <option>Rajasthan</option>
+              <option>Sikkim</option>
+              <option> Tamil Nadu</option>
+              <option>Telangana</option>
+              <option>Tripura</option>
+              <option> Uttar Pradesh</option>
+              <option>Uttarakhand</option>
+              <option>West Bengal</option>
+            
+
+            </select>
+          </div>
 
 
         <div class="form-group">
         <label>City</label>
-        <input type="text" id="city" name="city" placeholder="Enter your city"  class ="form-control"  [(ngModel)] = "Buynow.city">
+        <input type="text" id="city" name="city"   class ="form-control"  [(ngModel)] = "Buynow.city">
          </div>
 
 
           <div class="form-group">
             <label >Zip-Code</label>
-            <input type="tel"  placeholder="123-456" class="form-control" id = "zipCode" name="zipCode"  
+            <input type="tel" class="form-control" id = "zipCode" name="zipCode"  
             [(ngModel)] = "Buynow.zipCode" >
         </div>
     

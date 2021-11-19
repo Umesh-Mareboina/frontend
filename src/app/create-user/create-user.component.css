@@ -1,0 +1,8 @@
+.message
+{
+        position:below;
+        color:green;
+        top: 30%;
+        left:50%;
+        font-weight: bold;
+}

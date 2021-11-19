@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentService } from '../student.service';
+import { LoginService } from '../login.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-books',
@@ -8,8 +9,10 @@ import { StudentService } from '../student.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
+  login: any;
 
-  constructor(private router: Router,private student : StudentService) { }
+
+  constructor(private router: Router,private user : UserService,private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -26,24 +29,34 @@ export class BooksComponent implements OnInit {
     { 'id': 7, 'name': 'Scary Stories', 'description': "On Halloween 1968,The Jangly Man kills Turner by breaking his neck before attempting to kill Ramón.death of a jangly man.", 'image': '../../assets/sc1.jpg' },
     { 'id': 8, 'name': 'Death story', 'description': "Death is a taboo in most societies in the world. But what if we have got this completely wrong?", 'image': '../../assets/de2.png' }
   ]
+    
+  logout()
+  {
+    this.router.navigate(['/home']);
+  }
 
-  onbuynow(bookName: String,emailId: String)
+  onbuynow(bookName: String)
+  
    {
-    const student=this.student.registerStudent;
-    if(student?.firstName && student?.lastName)
+    //const user=this.user.registerUser;
+    const user=this.loginService.loginUser;
+console.log(user);
+
+    if(user?.firstName && user?.lastName)
     {
-      const userName=student.firstName+' '+student.lastName;
-      const emailId=student.emailId;
+      const userName=user.firstName+' '+user.lastName;
+      const emailId=user.emailId;
+      
       this.router.navigate(['buynow'], 
       {
         queryParams: { bookName,userName,emailId }
        })
     }
-    else
-    {
-      alert('Please Register..');
-      this.router.navigate(['create-student'])
+    else{
+      alert("please login")
+      this.router.navigate(['/login'])
     }
+    
   }
 
 }
