@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
   
-  
-  saveLogin(){
-    this.loginService.createLogin(this.login).subscribe( data =>{
+  save(){
+    this.loginService.getUser(this.login.emailId,this.login.password).subscribe( data =>{
       console.log(data);
       this.loginService.loginUser=this.login;
       this.goToBooks();
@@ -61,9 +61,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
        if(this.login.emailId && this.login.password)
     {
-      console.log(this.login.emailId);
+      console.log(this.login);
       
-      this.saveLogin();
+      this.save();
+
     }
     else{
       alert("You missed your data.....below fields are requied");

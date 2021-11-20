@@ -28,9 +28,9 @@ postLoginsList(): Observable<Login[]>{
     return this.httpClient.get<Login>(`${this.baseURL}`+'/logins'+`/${id}`);
   }
 
-  getLogin(email_id: any): Observable<Login>{
+  getUser(email_id:any,password:any): Observable<any>{
 
-    return this.httpClient.get<Login>(`${this.baseURL}`+'/email'+`/${email_id}`);
+    return this.httpClient.get<Login>(`${this.baseURL}`+'/loginUser'+`/${email_id}/${password}`);
 
   }
 }

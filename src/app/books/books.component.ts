@@ -1,3 +1,4 @@
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
@@ -39,10 +40,14 @@ export class BooksComponent implements OnInit {
   
    {
     //const user=this.user.registerUser;
-    const user=this.loginService.loginUser;
-console.log(user);
-
-    if(user?.firstName && user?.lastName)
+    // const user=this.loginService.loginUser;
+    
+    // console.log();
+    
+      this.loginService.getUser(this.loginService.loginUser.emailId,this.loginService.loginUser.password).subscribe( data =>{
+        const user=data;
+        
+        if(user?.firstName && user?.lastName)
     {
       const userName=user.firstName+' '+user.lastName;
       const emailId=user.emailId;
@@ -51,11 +56,17 @@ console.log(user);
       {
         queryParams: { bookName,userName,emailId }
        })
-    }
-    else{
-      alert("please login")
-      this.router.navigate(['/login'])
-    }
+
+      }
+        console.log(data);
+    
+      },
+      error => {
+        return console.log(error);
+      });
+  
+
+    
     
   }
 
