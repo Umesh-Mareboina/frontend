@@ -41,6 +41,11 @@ export class BuynowComponent implements OnInit {
     this.router.navigate(['/books']);
   }
 
+  back()
+  {
+    this.router.navigate(['/books']);
+  }
+
 
   onSubmit(){
     

@@ -23,6 +23,9 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AddbookComponent } from './addbook/addbook.component';
+import { UpdateAddbookComponent } from './update-addbook/update-addbook.component';
+import { AddbookListComponent } from './addbook-list/addbook-list.component';
 
 
 
@@ -47,6 +50,9 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
     LoginComponent,
     AdminComponent,
     AdminPageComponent,
+    AddbookComponent,
+    UpdateAddbookComponent,
+    AddbookListComponent,
    
   ],
   imports: [

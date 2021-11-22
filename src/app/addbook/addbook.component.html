@@ -1,0 +1,38 @@
+<br><div class="col-md-4 offset-md-4 bg-light">
+    <br><h3> Add a Book</h3>
+    <form (ngSubmit) = "onSubmit()">
+    <br>
+        <div class="form-group">
+            <label> Book Name</label>
+            <input type="text" class ="form-control" id = "bookName"
+                [(ngModel)] = "addbook.bookName" name = "bookName">
+        </div>
+    
+        <div class="form-group">
+            <label>Image</label>
+            <input type="text" class ="form-control" id = "image"
+                [(ngModel)] = "addbook.image" name = "image">
+        </div>
+
+     
+    
+        <div class="form-group">
+            <label> Price</label>
+            <input type="text" class ="form-control" id = "price" 
+                [(ngModel)] = "addbook.price" name = "price">
+        </div>
+
+        
+        <div class="form-group">
+            <label >Description</label>
+            <textarea name = "description" class ="form-control" 
+            [(ngModel)] = "addbook.description">
+             </textarea>
+        </div>
+        
+    
+        <button class = "btn btn-info" type ="submit">Add</button>&nbsp;
+    &nbsp;
+    <button (click) = "back()" class = "btn btn-dark" > Back</button>&nbsp; 
+    </form>
+    </div> 

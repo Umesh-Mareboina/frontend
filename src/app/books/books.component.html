@@ -1,24 +1,25 @@
-<section class="books">
-    <div class="container">
-        <h1 class="text-center">All Books</h1>
-        <button (click) = "logout()" class = "btn btn-danger" style="margin-left: 1200px"> Logout</button>&nbsp; 
-    
-        <div class="row mt-5" >
-            <div class="col-lg-4 mb-5" *ngFor="let cs of books">
-                <div class="box shadow-sm">
-                    <img src="{{cs.image}}" width="100%">
-                    <h4 class="mt-2">{{cs.name}}</h4>
-                    <p clas="mt-3">{{cs.description}}</p>
-                  
-                    <!-- <button class="btn btn-danger btn-sm mt-2" type ="submit" href='learnmore'>Learn More</button> -->
-                    <!-- <a class="btn btn-danger btn-sm mt-2" type ="submit" href='buynow'>Buy Now</a> -->
-                    <a class="btn btn-danger btn-sm mt-2" (click)="onbuynow(cs.name)">Buy Now</a>
-                    
-                    
-                </div>
+<br><h2>All Books</h2><br>
+<br><br>
+<button (click) = "logout()" class = "btn btn-danger" style="margin-left: 1200px"> Logout</button>&nbsp; 
+<br><br>
+ <div class="row">
+    <div *ngFor="let addbook of addbooks" class="col-md-6 col-xl-3">
+       <div class="card m-b-30">
+          <div class="card-body row">
+             <div class="card-img-top">
+                <a href=""><img src= {{addbook.image}}  alt=""   class="img-fluid rounded-rectangle w-10"  style="margin:5px; max-height:200px; max-width:200px;"></a>
     
             </div>
-        </div>
-    
-    </div>
-    </section>
+
+          </div>
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Book Name: {{addbook.bookName}}</li>
+            <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Description: {{addbook.description}}</li>
+             <li class="list-group-item"><i class="fa fa-phone float-right"></i>Price : {{addbook.price}}</li>
+          </ul>
+          <a class="btn btn-success btn-sm mt-2" (click)="onbuynow(addbook.bookName)">Buy Now</a>
+
+          </div>
+          </div>
+          </div>

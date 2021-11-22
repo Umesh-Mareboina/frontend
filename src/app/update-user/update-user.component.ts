@@ -30,6 +30,7 @@ export class UpdateUserComponent implements OnInit {
     }
     , error => console.log(error));
   }
+
   
   goToUserList(){
     this.router.navigate(['/users']);

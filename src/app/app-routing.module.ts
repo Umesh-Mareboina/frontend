@@ -14,6 +14,9 @@ import { BuynowListComponent } from './buynow-list/buynow-list.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AddbookComponent } from './addbook/addbook.component';
+import { UpdateAddbookComponent } from './update-addbook/update-addbook.component';
+import { AddbookListComponent } from './addbook-list/addbook-list.component';
 
 const routes: Routes = [
 
@@ -32,6 +35,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'admin-page', component: AdminPageComponent},
+  {path: 'addbook', component: AddbookComponent},
+  {path: 'update-addbook/:id', component: UpdateAddbookComponent},
+  {path: 'addbooklist', component: AddbookListComponent},
 ];
 
 @NgModule({

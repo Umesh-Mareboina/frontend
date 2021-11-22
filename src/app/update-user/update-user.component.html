@@ -27,6 +27,7 @@
                 name="gender"
                 id="gender"
                 value="Female"
+                disabled
               />
               <label class="form-check-label" for="femaleGender">Female</label>
             </div>
@@ -39,6 +40,7 @@
                 name="gender"
                 id="gender"
                 value="Male"
+                disabled
               />
               <label class="form-check-label" for="maleGender">Male</label>
             </div>
@@ -51,6 +53,7 @@
                 name="gender"
                 id="gender"
                 value="Other"
+                disabled
                 />
               <label class="form-check-label" for="otherGender">Other</label>
             </div>
@@ -66,8 +69,15 @@
                 </span>
                 
         </div>
+
+        <div class="form-group">
+          <label for="password" class="control-label"> Password</label>
+          <input type="password"  placeholder="Enter Password" class ="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id = "password" name="password" minlength="8"
+         [(ngModel)] = "user.password" disabled>
+          </div>
     
-        <button class = "btn btn-info" type ="submit">Update</button>
-    
+        <button class = "btn btn-info" type ="submit">Update</button>&nbsp;
+
+        <button href="users" class = "btn btn-dark"> Back</button>&nbsp;
     </form>
     </div> 
