@@ -19,6 +19,11 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+back(){
+  this.router.navigate(['home'])
+}
+
   saveAdmin(){
     this.adminService.admin(this.admin).subscribe( data =>{
       console.log(data);

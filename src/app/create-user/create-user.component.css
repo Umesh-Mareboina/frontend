@@ -6,3 +6,11 @@
         left:50%;
         font-weight: bold;
 }
+.log img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  
+}

@@ -1,7 +1,9 @@
-<br><br><div class="col-md-4 offset-md-4 bg-light">
-    <br><h3> Registration Form</h3><br>
+<div class="col-md-4 offset-md-4">
     <form (ngSubmit) = "onSubmit()">
-    
+      <div class="log">
+        <a><img src="../../assets/reg.jpg"></a>
+        </div>
+
         <div class="form-group">
             <label> First Name</label>
             <input type="text"  placeholder="Enter First Name" class ="form-control" id = "firstName" name="firstName"
@@ -98,7 +100,8 @@
        
    
     
-        <button class = "btn btn-primary" type ="submit" >Register</button>
+        <button class = "btn btn-primary" type ="submit" >Register</button>&nbsp;
+       <button (click) = "back()" class = "btn btn-dark" > Back</button>&nbsp;  
     
     </form>&nbsp;
     </div> 
