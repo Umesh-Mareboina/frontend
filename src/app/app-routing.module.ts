@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'buynow', component: BuynowComponent},
   {path: 'about', component: AboutComponent},
   {path: 'create-user', component: CreateUserComponent},
-  {path: '', redirectTo: 'users', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'update-user/:id', component: UpdateUserComponent},
   {path: 'user-details/:id', component: UserDetailsComponent},
   {path: 'update-buynow/:id', component: UpdateBuynowComponent},

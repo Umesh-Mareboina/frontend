@@ -1,4 +1,15 @@
 <div class="col-md-4 offset-md-4">
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+
+    <strong>Successfully Login!</strong>
+
+    <button (click)="closeAlert()"type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+      <span aria-hidden="true">&times;</span>
+
+    </button>
+
+  </div>
     <form (ngSubmit) = "onSubmit()">
       <div class="log">
         <a><img src="../../assets/reg.jpg"></a>
@@ -7,13 +18,15 @@
         <div class="form-group">
             <label> First Name</label>
             <input type="text"  placeholder="Enter First Name" class ="form-control" id = "firstName" name="firstName"
-                [(ngModel)] = "user.firstName">
+                [(ngModel)] = "user.firstName" 
+                data-toggle="tooltip" data-placement="bottom" title="Enter Your First Name">
         </div>
     
         <div class="form-group">
             <label> Last Name</label>
             <input type="text" placeholder="Enter Last Name" class ="form-control" id = "lastName" name="lastName"
-                [(ngModel)] = "user.lastName">
+                [(ngModel)] = "user.lastName"
+                data-toggle="tooltip" data-placement="bottom" title="Enter Your Last Name">
         </div>
 
         <div class="form-group">
@@ -28,6 +41,7 @@
                 name="gender"
                 id="gender"
                 value="Female"
+                data-toggle="tooltip" data-placement="bottom" title="Female"
               />
               <label class="form-check-label" for="femaleGender">Female</label>
             </div>
@@ -40,6 +54,7 @@
                 name="gender"
                 id="gender"
                 value="Male"
+                data-toggle="tooltip" data-placement="bottom" title="Male"
               />
               <label class="form-check-label" for="maleGender">Male</label>
             </div>
@@ -52,15 +67,18 @@
                 name="gender"
                 id="gender"
                 value="Other"
+                data-toggle="tooltip" data-placement="bottom" title="Others"
                 />
-              <label class="form-check-label" for="otherGender">Other</label>
+              <label class="form-check-label" for="otherGender">Others</label>
             </div>
           </div>
-    
+
+       
         <div class="form-group">
             <label for="emailId" class="control-label"> Email Id</label>
             <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Email Id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              [(ngModel)] = "user.emailId"  type="email" class ="form-control" >
+              [(ngModel)] = "user.emailId"  type="email" class ="form-control" 
+              data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Enter a Valid Email Id
@@ -72,7 +90,8 @@
         <div class="form-group">
           <label for="password" class="control-label"> Password</label>
           <input type="password"  placeholder="Enter Password" class ="form-control" (input)="validatepassword()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id = "password" name="password" minlength="8"
-         [(ngModel)] = "user.password">
+         [(ngModel)] = "user.password"
+         data-toggle="tooltip" data-placement="bottom" title="Enter Your Password">
           
           <span class="help-block btn-danger" *ngIf=err.password>
             Please Enter a Valid format<br>
@@ -89,7 +108,8 @@
           <div class="form-group">
             <label for="password" class="control-label"> Confirm Password</label>
           <input type="password"  placeholder="Confirm Password" class ="form-control"  (input)="validatepassword()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id = "confirmPassword" name="confirmPassword" minlength="8"
-          [(ngModel)] = "user.confirmPassword">
+          [(ngModel)] = "user.confirmPassword"
+          data-toggle="tooltip" data-placement="bottom" title="Re-Enter Your Password">
           
           <span class="help-block btn-danger" *ngIf=err.password>
             password doesn't match<br>
@@ -100,8 +120,9 @@
        
    
     
-        <button class = "btn btn-primary" type ="submit" >Register</button>&nbsp;
-       <button (click) = "back()" class = "btn btn-dark" > Back</button>&nbsp;  
+        <button class = "btn btn-primary" type ="submit" 
+        data-toggle="tooltip" data-placement="bottom" title="Click here to Register">Register</button>&nbsp;
+       <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;  
     
     </form>&nbsp;
     </div> 

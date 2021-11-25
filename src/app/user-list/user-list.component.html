@@ -1,5 +1,6 @@
-<br><h2>Registered User Info</h2>
-<button (click) = "back()" class = "btn btn-secondary" style="margin-left: 1150px"> Back</button>&nbsp;    
+<br><h2 style=text-align:center;>Registered User Info</h2>
+<button (click) = "back()" class = "btn btn-secondary" style="margin-left: 1150px"
+data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;    
 <br><br>
 <table class = "table table-striped">
     <thead>
@@ -8,6 +9,7 @@
             <th> Last Name </th>
             <th> Gender</th>
             <th> Email Id</th>
+            <th> Password</th>
             <th> Actions </th>
         </tr>
     </thead>
@@ -17,9 +19,13 @@
             <td> {{ user.lastName }} </td>
             <td> {{ user.gender }} </td>
             <td> {{ user.emailId }} </td>
+            <td> {{user.password}}</td>
             <td>
-                <button (click) = "updateUser(user.id)" class = "btn btn-warning" style="margin-left: 10px"> View</button>&nbsp;           
-                <button (click) = "deleteUser(user.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "updateUser(user.id)" class = "btn btn-warning" style="margin-left: 10px"
+                data-toggle="tooltip" data-placement="bottom" title="Click here to View&Update registered User details"> View</button>&nbsp;           
+
+                <button (click) = "deleteUser(user.id)" class = "btn btn-danger" style="margin-left: 10px"
+                data-toggle="tooltip" data-placement="bottom" title="Click here to Delete registered user details"> Delete</button>
                 
             </td>
         </tr>

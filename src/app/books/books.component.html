@@ -1,7 +1,7 @@
 <div class="col offset">
 
-<br><h2 >All Books</h2><br>
-<button (click) = "logout()" class = "btn btn-success" style="margin-left: 1200px"> Logout</button>&nbsp; 
+<br><h2 style="text-align:center;">All Books</h2><br>
+<button (click) = "logout()" class = "btn btn-success" style="margin-left: 1200px" data-toggle="tooltip" data-placement="bottom" title="please logout"> Logout</button><br><br>
 
  <div class="row">
     <div *ngFor="let addbook of addbooks" class="col-md-5 col-xl-3">
@@ -19,7 +19,7 @@
             <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Description: {{addbook.description}}</li>
              <li class="list-group-item"><i class="fa fa-phone float-right"></i>Price : {{addbook.price}}</li>
           </ul>
-          <a class="btn btn-danger" (click)="onbuynow(addbook.bookName)">Buy Now</a>
+          <a class="btn btn-danger" (click)="onbuynow(addbook.bookName)" data-toggle="tooltip" data-placement="bottom" title="Click here to Buy">Buy Now</a>
 
           </div>
           </div>

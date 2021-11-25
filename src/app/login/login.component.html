@@ -1,6 +1,18 @@
 &nbsp;
 <br><br><div class="col-md-4 offset-md-4 bg-light">
     <br><h3 style="text-align:center;"> Login Here</h3><br>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+
+        <strong>Successfully Login!</strong>
+
+        <button (click)="closeAlert()"type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+          <span aria-hidden="true">&times;</span>
+
+        </button>
+
+      </div>
+
     <form (ngSubmit) = "onSubmit()">
         <div class="log">
             <a><img src="../../assets/admin.png"></a>
@@ -9,7 +21,8 @@
         <div class="form-group">
             <label for="emailId" class="control-label"> Email Id</label>
             <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Your Email Id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-             #emailId="ngModel" [(ngModel)] = "login.emailId"  type="email" class ="form-control" >
+             #emailId="ngModel" [(ngModel)] = "login.emailId"  type="email" class ="form-control"
+             data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id" >
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Input a Valid Email Id
@@ -20,14 +33,14 @@
         <div class="form-group">
             <label> Password</label>
             <input type="password"  placeholder="Enter Your Password" class ="form-control" id = "password" name="password" minlength="8"
-                [(ngModel)] = "login.password">
+                [(ngModel)] = "login.password" data-toggle="tooltip" data-placement="bottom" title="Enter Your Password">
         
             </div>
     
-        <button class = "btn btn-primary" type ="submit">Login</button>&nbsp;
-        <button (click) = "back()" class = "btn btn-dark" > Back</button>&nbsp; 
+        <button class = "btn btn-primary" type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Login">Login</button>&nbsp;
+        <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go Back"> Back</button>&nbsp; 
 <br><br>
-    <a href="create-user">Click here to register!</a>
+    <a href="create-user" data-toggle="tooltip" data-placement="bottom" title="Click here to register!">Click here to register!</a>
 
        
 

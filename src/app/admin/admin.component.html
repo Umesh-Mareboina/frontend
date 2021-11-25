@@ -1,7 +1,19 @@
 <br><br><div class="col-md-4 offset-md-4 bg-light">
     <br><h3 style="text-align:center;"> Admin Login </h3><br>
    
-    <form (ngSubmit) = "onSubmit()">
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+
+        <strong>Successfully Login!</strong>
+
+        <button (click)="closeAlert()"type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+          <span aria-hidden="true">&times;</span>
+
+        </button>
+
+      </div>
+
+   <form (ngSubmit) = "onSubmit()">
         <div class="log">
             <a><img src="../../assets/admin.png"></a>
             &nbsp;
@@ -10,7 +22,8 @@
             
             <label for="emailId" class="control-label"> Email Id</label>
             <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Your Email Id" pattern="^[a-z0-9._%+-]+@booksworld.com$"
-             #emailId="ngModel" [(ngModel)] = "admin.emailId"  type="email" class ="form-control" >
+             #emailId="ngModel" [(ngModel)] = "admin.emailId"  type="email" class ="form-control"
+              data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id">
             <small id="emailHelp" class="form-text text-muted">Admin email id is required.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Input a Valid Email Id
@@ -21,7 +34,7 @@
         <div class="form-group">
             <label for="password" class="control-label"> Password</label>
             <input type="password"  placeholder="Enter Your Password" class ="form-control" (input)="validatepassword()" id = "password" name="password"  minlength="7"
-            #password="ngModel" [(ngModel)] = "admin.password">
+            #password="ngModel" [(ngModel)] = "admin.password" data-toggle="tooltip" data-placement="bottom" title="Enter Your Password">
                 <span class="help-block btn-danger" *ngIf=err.password>
                     Please Input a Valid Password
                 </span>
@@ -29,8 +42,8 @@
         </div>
     
     
-        <button class = "btn btn-primary" type ="submit">Login</button>&nbsp; 
-        <button (click) = "back()" class = "btn btn-dark" > Back</button>&nbsp; 
+        <button class = "btn btn-primary" type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Login">Login</button>&nbsp; 
+        <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go Back"> Back</button>&nbsp; 
     </form>&nbsp;
     </div> 
     

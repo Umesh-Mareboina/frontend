@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Admin } from '../admin';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +14,7 @@ export class AdminComponent implements OnInit {
   errors={ emailId:false};
   err={ password:false};
   admin: Admin = new Admin();
-  
+  alert:boolean=false;
   constructor(private adminService: AdminService,
     private router: Router) { }
 
@@ -45,13 +46,18 @@ back(){
 
     if (this.admin.emailId == 'abc@booksworld.com' && this.admin.password=='1234567')
 {
-      this.goToAdminPage();
+  this.alert=true;
+     
 }
   else
   {
   alert("you missed below fields")
 }
+
     };
+    closeAlert(){
+      this.goToAdminPage();
+    }
   validateemailId(){
     
     const pattern = /^[a-z0-9._%+-]+@booksworld.com$/ ;
