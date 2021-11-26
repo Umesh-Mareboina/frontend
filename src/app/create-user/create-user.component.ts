@@ -15,7 +15,7 @@ export class CreateUserComponent implements OnInit {
   errors={ emailId:false};
   err={ password:false};
   user: User = new User();
-  alert:boolean=false;
+
   constructor(private userService: UserService,
     private router: Router) { }
 
@@ -39,9 +39,7 @@ export class CreateUserComponent implements OnInit {
   goToLogin(){
     this.router.navigate(['/login']);
   }
-  closeAlert(){
-    this.goToLogin();
-  }
+
   
   onSubmit(){
 
@@ -49,7 +47,7 @@ export class CreateUserComponent implements OnInit {
     {
      
       console.log(this.user);
-      this.alert=true;
+    
       this.saveUser();
     }
     else{

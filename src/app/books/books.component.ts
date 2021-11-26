@@ -30,10 +30,10 @@ addbooks:Addbook[];
     
   logout()
   {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 
-  onbuynow(bookName: String)
+  onsubmit(bookName: String)
   
    {
     //const user=this.user.registerUser;

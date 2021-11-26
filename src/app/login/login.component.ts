@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  alert:boolean=false;
   errors={ emailId:false};
   login: Login = new Login();
   constructor(private loginService: LoginService,
@@ -38,9 +37,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/books']);
   }
 
-  closeAlert(){
-    this.goToBooks();
-  }
+ 
   
   // onSubmit(){
   //   if(!this.errors.emailId && this.login.password)
@@ -68,7 +65,7 @@ export class LoginComponent implements OnInit {
     {
     
       console.log(this.login);
-      this.alert=true;
+      
       this.save();
 
     }

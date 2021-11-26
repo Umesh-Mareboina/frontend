@@ -26,7 +26,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AddbookComponent } from './addbook/addbook.component';
 import { UpdateAddbookComponent } from './update-addbook/update-addbook.component';
 import { AddbookListComponent } from './addbook-list/addbook-list.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -57,9 +58,11 @@ import { AddbookListComponent } from './addbook-list/addbook-list.component';
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
