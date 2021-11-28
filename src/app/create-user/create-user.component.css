@@ -1,10 +1,10 @@
 .message
 {
         position:below;
-        color:green;
+        color:black;
         top: 30%;
         left:50%;
-        font-weight: bold;
+        
 }
 .log img
 {

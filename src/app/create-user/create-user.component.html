@@ -1,9 +1,12 @@
-<div class="col-md-4 offset-md-4">
+<div class="alert alert-info" role="alert">
+<div  class="col-md-4 offset-md-4 " >
 
     <form (ngSubmit) = "onSubmit()">
-      <div class="log">
-        <a><img src="../../assets/reg.jpg"></a>
+      <div class="log" >
+        <a><img src="../../assets/reg.jpg" class="rounded-pill" alt="" 
+          data-toggle="tooltip" data-placement="bottom" title="Register Here"></a>
         </div>
+        
 
         <div class="form-group">
             <label> First Name</label>
@@ -11,13 +14,16 @@
                 [(ngModel)] = "user.firstName" 
                 data-toggle="tooltip" data-placement="bottom" title="Enter Your First Name">
         </div>
-    
+    <hr>
+
         <div class="form-group">
             <label> Last Name</label>
             <input type="text" placeholder="Enter Last Name" class ="form-control" id = "lastName" name="lastName"
                 [(ngModel)] = "user.lastName"
                 data-toggle="tooltip" data-placement="bottom" title="Enter Your Last Name">
+                
         </div>
+        <hr>
 
         <div class="form-group">
 
@@ -62,6 +68,7 @@
               <label class="form-check-label" for="otherGender">Others</label>
             </div>
           </div>
+          <hr>
 
        
         <div class="form-group">
@@ -69,12 +76,13 @@
             <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Email Id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               [(ngModel)] = "user.emailId"  type="email" class ="form-control" 
               data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Enter a Valid Email Id
                 </span>
                 
         </div>
+        <hr>
 
 
         <div class="form-group">
@@ -93,7 +101,7 @@
             <p id="length" class="invalid">Minimum 8 characters</p>
             </div>
           </span>
-          &nbsp;
+          <hr>
 
           <div class="form-group">
             <label for="password" class="control-label"> Confirm Password</label>
@@ -108,11 +116,12 @@
       </div>
 
        
-   
+   <hr>
     
-        <button class = "btn btn-primary" type ="submit" 
+        <button class = "btn btn-danger" type ="submit" 
         data-toggle="tooltip" data-placement="bottom" title="Click here to Register">Register</button>&nbsp;
        <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;  
     
     </form>&nbsp;
     </div> 
+</div>

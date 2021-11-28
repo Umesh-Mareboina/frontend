@@ -1,7 +1,8 @@
-<br><div class="col-md-4 offset-md-4 bg-light">
-    <br><h3> Update Book Info</h3>
+<div class="alert alert-info" role="alert">
+<br><div class="col-md-4 offset-md-4">
+    <h2 style="text-align:center;"> Update Book Info</h2><hr>
     <form (ngSubmit) = "onSubmit()">
-    <br>
+
         <div class="form-group">
             <label> Book Name</label>
             <input type="text" class ="form-control" id = "bookName"
@@ -32,13 +33,15 @@
             data-toggle="tooltip" data-placement="bottom" title="Enter a description">
              </textarea>
         </div>
-
+<hr>
 
     
-        <button class = "btn btn-info" type ="submit"
+        <button class = "btn btn-danger" type ="submit"
         data-toggle="tooltip" data-placement="bottom" title="Click here to Update">Update</button>&nbsp;
 
         <button href="addbook" class = "btn btn-dark"
         data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;
     </form>
+    <br>
     </div> 
+    </div>

@@ -1,8 +1,11 @@
 .follow a
 {
     padding: 10px;
-    color: blue;
-    font-weight: bold;
+    color:maroon;
+   
+}
+.gmail{
+    color:maroon;
 }
 @media screen and (max-width:600px)
 {

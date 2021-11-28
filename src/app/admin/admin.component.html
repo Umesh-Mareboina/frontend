@@ -1,9 +1,9 @@
-<br><br><div class="col-md-4 offset-md-4 bg-light">
-    <br><h3 style="text-align:center;"> Admin Login </h3><br>
-   
-    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-info" role="alert">
+<br><br><div class="col-md-4 offset-md-4 ">
+    <br><h2 style="text-align:center;"> Admin Login </h2><hr>
+    <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
 
-        <strong>Successfully Login!</strong>
+        Successfully Login!
 
         <button (click)="closeAlert()"type="button" class="close" data-dismiss="alert" aria-label="Close">
 
@@ -15,7 +15,8 @@
 
    <form (ngSubmit) = "onSubmit()">
         <div class="log">
-            <a><img src="../../assets/admin.png"></a>
+            <a><img src="../../assets/admin.png"  class="rounded-pill" alt=""
+                data-toggle="tooltip" data-placement="bottom" title="Admin Here"></a>
             &nbsp;
 </div>
         <div class="form-group">
@@ -24,7 +25,7 @@
             <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Your Email Id" pattern="^[a-z0-9._%+-]+@booksworld.com$"
              #emailId="ngModel" [(ngModel)] = "admin.emailId"  type="email" class ="form-control"
               data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id">
-            <small id="emailHelp" class="form-text text-muted">Admin email id is required.</small>
+            <small id="emailHelp" class="form-text">Admin email id is required.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Input a Valid Email Id
                 </span>
@@ -41,9 +42,11 @@
             
         </div>
     
-    
-        <button class = "btn btn-primary" type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Login">Login</button>&nbsp; 
+    <hr>
+        <button class = "btn btn-danger" type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Login">Login</button>&nbsp; 
         <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go Back"> Back</button>&nbsp; 
     </form>&nbsp;
     </div> 
+    
+    </div>
     

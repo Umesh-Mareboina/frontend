@@ -1,5 +1,6 @@
-<br><div class="col-md-6 offset-md-3 bg-light">&nbsp;
-    <br><h3 style=text-align:center;> Update Order Info</h3>
+<div class="alert alert-info" role="alert">
+<br><div class="col-md-6 offset-md-3">&nbsp;
+    <br><h2 style=text-align:center;> Update Order Info</h2><hr>
  <br>
     <form (ngSubmit) = "onSubmit()">
 
@@ -7,6 +8,7 @@
           <div class="form-group col-md-6">
             <label>Book Name</label>
             <input type="text" class="form-control" id="bookName" name="bookName"
+            data-toggle="tooltip" data-placement="bottom" title="Your Selected Book Name"
             [(ngModel)] = "buynow.bookName" disabled>  
         </div>
 
@@ -14,6 +16,7 @@
           <div class="form-group col-md-6">
             <label >User Name</label>
             <input type="text" class="form-control" id="userName" name="userName"
+            data-toggle="tooltip" data-placement="bottom" title="Your User Name"
             [(ngModel)] = "buynow.userName" disabled>
           </div>
         </div>
@@ -22,8 +25,9 @@
         <div class="form-group">
             <label for="emailId" class="control-label"> Email Id</label>
             <input  id = "emailId" name="emailId"  (input)="validateemailId()"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             data-toggle="tooltip" data-placement="bottom" title="Your Email"
              #emailId="ngModel" [(ngModel)] = "buynow.emailId"  type="email" class ="form-control" disabled>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
                <span class="help-block btn-danger" *ngIf=errors.emailId>
                     Please Input a Valid Email Id
                 </span>
@@ -31,19 +35,30 @@
         </div>
 
         <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
+          <label >Price</label>
+          <input type="text" class="form-control" id="price" name="price"
+          data-toggle="tooltip" data-placement="bottom" title="Your Selected Book Price"
+          [(ngModel)] = "buynow.price" disabled>
+        </div>
+      
+
+    
+        <div class="form-group col-md-4">
             <label >Address</label>
             <input type="text" class="form-control"  id = "address" name="address"
-            [(ngModel)] = "buynow.address"
-            data-toggle="tooltip" data-placement="bottom" title="Enter Address">
+            data-toggle="tooltip" data-placement="bottom" title="Update address"
+            [(ngModel)] = "buynow.address">
+          
       </div>
 
         
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label >Phone Number</label>
             <input type="tel" class="form-control"  pattern="^\d{3}-\d{3}-\d{4}$" id = "phoneNumber" name="phoneNumber"
-            [(ngModel)] = "buynow.phoneNumber"
-            data-toggle="tooltip" data-placement="bottom" title="Enter Phone Number">
+            data-toggle="tooltip" data-placement="bottom" title="Update Phone Number"
+            [(ngModel)] = "buynow.phoneNumber">
+            
           </div>
           </div>
         
@@ -51,7 +66,7 @@
           <div class="form-group col-md-4">
             <label for="state">State</label>
             <select class="form-control" id="state" name="state" [(ngModel)] = "buynow.state"
-            data-toggle="tooltip" data-placement="bottom" title="Select State">
+            data-toggle="tooltip" data-placement="bottom" title="Update State">
                 
                 <option>--none--</option>
               <option>Andhra Pradesh</option>
@@ -93,23 +108,24 @@
           <div class="form-group col-md-4">
             <label>City</label>
     <input type="text" id="city" name="city"   class ="form-control"  [(ngModel)] = "buynow.city"
-     data-toggle="tooltip" data-placement="bottom" title="Enter City">
+     data-toggle="tooltip" data-placement="bottom" title="Update City">
           </div>
         
 
           <div class="form-group col-md-4">
             <label >Zip-Code</label>
         <input type="tel" class="form-control" id = "zipCode" name="zipCode"  
-        [(ngModel)] = "buynow.zipCode" data-toggle="tooltip" data-placement="bottom" title="Enter Zip-Code">
+        [(ngModel)] = "buynow.zipCode" data-toggle="tooltip" data-placement="bottom" title="Update Zip-Code">
           </div>
           </div>
           <br>
 
-        <button class = "btn btn-info" type ="submit"
+        <button class = "btn btn-danger" type ="submit"
         data-toggle="tooltip" data-placement="bottom" title="Click here to Update">Update</button>&nbsp;
     
         
         <button href="buynowlist" class = "btn btn-dark"
         data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;
     </form>
+    </div>
     </div>

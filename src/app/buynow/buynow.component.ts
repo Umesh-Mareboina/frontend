@@ -25,6 +25,7 @@ export class BuynowComponent implements OnInit {
     this.Buynow.bookName=data.bookName;
     this.Buynow.userName=data.userName;
     this.Buynow.emailId=data.emailId;
+    this.Buynow.price=data.price;
   })
   }
   
@@ -49,7 +50,7 @@ export class BuynowComponent implements OnInit {
 
   onSubmit(){
     
-    if(this.Buynow.emailId&& this.Buynow.phoneNumber && this.Buynow.address && this.Buynow.state && this.Buynow.city && this.Buynow.zipCode ) 
+    if(this.Buynow.phoneNumber && this.Buynow.address && this.Buynow.state && this.Buynow.city && this.Buynow.zipCode ) 
     {
       console.log(this.Buynow);
       this.saveBuynow();

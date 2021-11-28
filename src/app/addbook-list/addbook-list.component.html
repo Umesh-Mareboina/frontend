@@ -1,19 +1,22 @@
-<br><h2  style="text-align:center;">Books Info</h2><br>
+<div class="alert alert-info" role="alert">
+<br><h2  style="text-align:center;">Books Info</h2><hr>
 <button (click) = "back()" class = "btn btn-secondary" style="margin-left: 1380px"
 data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;  
-<br><br>
+<br>
  <div class="row">
     <div *ngFor="let addbook of addbooks" class="col-md-6 col-xl-3">
+       <hr>
        <div class="card m-b-30">
           <div class="card-body row">
              <div class="card-img-top">
-                <a href=""><img src= {{addbook?.image}}  alt=""   class="img-fluid rounded-rectangle w-10"  style="margin:5px; max-height:200px; max-width:200px;"></a>
+                <a href=""><img src= {{addbook?.image}}  alt=""  data-toggle="tooltip" data-placement="bottom" title="{{addbook.bookName}}"
+                  class="rounded mx-auto d-block"   style="margin:5px; max-height:200px; max-width:200px;"></a>
              </div>
 
           </div>
           <ul class="list-group list-group-flush">
 
-            <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Book Name: {{addbook?.bookName}}</li>
+            <li class="list-group-item  list-group-item-warning"><i class="fa fa-envelope float-right"></i>Book Name: {{addbook?.bookName}}</li>
             <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Description: {{addbook?.description}}</li>
              <li class="list-group-item"><i class="fa fa-phone float-right"></i>Price : {{addbook?.price}}</li>
              <br>
@@ -24,6 +27,7 @@ data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Bac
                 data-toggle="tooltip" data-placement="bottom" title="Click here to Delete Book details"> Delete</button>
           </ul>
 
+          </div>
           </div>
           </div>
           </div>

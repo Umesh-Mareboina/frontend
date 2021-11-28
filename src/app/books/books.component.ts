@@ -5,6 +5,7 @@ import { LoginService } from '../login.service';
 import { UserService } from '../user.service';
 import { AddbookService } from '../addbook.service'
 
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -33,7 +34,7 @@ addbooks:Addbook[];
     this.router.navigate(['/login']);
   }
 
-  onsubmit(bookName: String)
+  onsubmit(bookName: String,price: String)
   
    {
     //const user=this.user.registerUser;
@@ -48,10 +49,12 @@ addbooks:Addbook[];
     {
       const userName=user.firstName+' '+user.lastName;
       const emailId=user.emailId;
+     
+     
       
       this.router.navigate(['buynow'], 
       {
-        queryParams: { bookName,userName,emailId }
+        queryParams: { bookName,userName,emailId,price }
        })
 
       }
