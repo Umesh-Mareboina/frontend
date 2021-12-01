@@ -21,7 +21,7 @@ export class BuynowService {
 postBuynowList(): Observable<Buynow[]>{
   return this.httpClient.get<Buynow[]>(`${this.baseURL}`);
 }
-createBuyer(buynow: Buynow): Observable<Object>{                                       ///////student.service.ts
+createBuyer(buynow: Buynow): Observable<Object>{                                    
   return this.httpClient.post(`${this.baseURL}`+'/save-buynow', buynow);
 }
 

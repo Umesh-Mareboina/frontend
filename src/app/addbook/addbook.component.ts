@@ -45,7 +45,7 @@ addbook : Addbook=new Addbook();
       this.saveAddbook();
     }
     else{
-      alert("You missed your data.....below fields are requied");
+      alert("* Fields are Required");
     }
     // console.log(this.student);
     // this.saveStudent();

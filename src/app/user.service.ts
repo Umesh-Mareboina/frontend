@@ -20,7 +20,7 @@ export class UserService {
 postUsersList(): Observable<User[]>{
   return this.httpClient.get<User[]>(`${this.baseURL}`);
 }
-  createUser(user: User): Observable<Object>{                                       ///////user.service.ts
+  createUser(user: User): Observable<Object>{                                       
     return this.httpClient.post(`${this.baseURL}`+'/save-user', user);
   }
 

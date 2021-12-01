@@ -1,13 +1,16 @@
 <br><br>
 <div class="alert alert-info" role="alert">
 <div class="col-md-6 offset-md-3">
-    <br><h2 style=text-align:center; > Buy Now</h2>
+  <h2 style="text-align:center;" > Buy Now
+  <i class="material-icons right"> shopping_cart</i>
+  </h2>
     <hr>
   
     <form (ngSubmit) = "onSubmit()">
 
             <div class="form-row">
               <div class="form-group col-md-6">
+                <i class="material-icons"> book</i>
                 <label>Book Name</label>
                 <input type="text" class="form-control" id="bookName" name="bookName"
                 data-toggle="tooltip" data-placement="bottom" title="Your Selected BookName"
@@ -16,6 +19,7 @@
 
 
               <div class="form-group col-md-6">
+                <i class="material-icons"> person_outline</i>
                 <label >User Name</label>
                 <input type="text" class="form-control" id="userName" name="userName"
                 data-toggle="tooltip" data-placement="bottom" title="Your FirstName and LastName"
@@ -25,6 +29,7 @@
 
 
             <div class="form-group">
+              <i class="material-icons"> mail</i>
                 <label for="emailId" class="control-label"> Email Id</label>
                 <input  id = "emailId" name="emailId"  (input)="validateemailId()"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                  #emailId="ngModel" [(ngModel)] = "Buynow.emailId" 
@@ -40,8 +45,8 @@
         
 
             <div class="form-row">
-
               <div class="form-group col-md-4">
+                <i class="material-icons"> money</i>&nbsp;
                 <label >Price</label>
                 <input type="text" class="form-control"  id = "price" name="price"
                 [(ngModel)] = "Buynow.price"
@@ -50,6 +55,7 @@
 
 
             <div class="form-group col-md-4">
+              <i class="material-icons">home</i>&nbsp;
                 <label >Address</label>
                 <input type="text" class="form-control"  id = "address" name="address"
                 [(ngModel)] = "Buynow.address"
@@ -59,6 +65,7 @@
 
           
             <div class="form-group col-md-4">
+              <i class="material-icons"> phone_android</i>&nbsp;
                 <label >Phone Number</label>
                 <input type="tel" class="form-control"  pattern="^\d{3}-\d{3}-\d{4}$" id = "phoneNumber" name="phoneNumber"
                 [(ngModel)] = "Buynow.phoneNumber"
@@ -70,6 +77,7 @@
 
             <div class="form-row">
               <div class="form-group col-md-4">
+                <i class="material-icons"> add_location</i>&nbsp;
                 <label for="state">State</label>
                 <select class="form-control" id="state" name="state" [(ngModel)] = "Buynow.state"
                 data-toggle="tooltip" data-placement="bottom" title="Select Your State">
@@ -111,6 +119,7 @@
             
               
               <div class="form-group col-md-4">
+                <i class="material-icons"> place</i>&nbsp;
                 <label>City</label>
         <input type="text" id="city" name="city"   class ="form-control"  [(ngModel)] = "Buynow.city"
          data-toggle="tooltip" data-placement="bottom" title="Click Your City">
@@ -118,6 +127,7 @@
             
 
               <div class="form-group col-md-4">
+                <i class="material-icons">pin_drop</i>&nbsp;
                 <label >Zip-Code</label>
             <input type="tel" class="form-control" id = "zipCode" name="zipCode"  
             [(ngModel)] = "Buynow.zipCode" data-toggle="tooltip" data-placement="bottom" title="Enter Your Zip-Code">
@@ -125,8 +135,12 @@
               </div>
           
     <br>
-        <button class = "btn btn-danger col-md-4 " type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Order">Order</button>&nbsp;
-        <button (click) = "back()" class = "btn btn-secondary col-md-4" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;  
+        <button class = "btn btn-danger col-md-4 " type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Order">Order
+          <i class="material-icons">shopping_bag</i>
+        </button>&nbsp;
+        <button (click) = "back()" class = "btn btn-secondary col-md-4" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back
+          <i class="material-icons">arrow_back</i>&nbsp;
+        </button>&nbsp;  
    
     </form>&nbsp;
 </div> 

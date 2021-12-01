@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Buynow } from '../buynow'
 import { BuynowService } from '../buynow.service'
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-buynow-list',
@@ -12,7 +14,12 @@ export class BuynowListComponent implements OnInit {
   
 
 
-  buynows: Buynow[];
+  buynows!: Buynow[];
+
+  displayedColumns: String[] = ['bookName','userName','emailId','price','address','phoneNumber','state','city','zipCode','action'];
+  
+
+  dataSource: MatTableDataSource<Buynow>;
   
 
   constructor(private buynowService: BuynowService,
@@ -22,9 +29,11 @@ export class BuynowListComponent implements OnInit {
   {
    this.getorders();
   }
+
   private getorders(){
     this.buynowService.getBuynowList().subscribe(data => {
       this.buynows = data;
+      this.dataSource = new MatTableDataSource(this.buynows);
     });
   }
 

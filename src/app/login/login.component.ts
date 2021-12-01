@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
 
     }
     else{
-      alert("You missed your data.....below fields are requied");
+      alert(" * Fields are Required");
       
     }
 

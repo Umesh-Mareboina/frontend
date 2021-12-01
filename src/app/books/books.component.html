@@ -2,7 +2,10 @@
 <div class="col offset">
 
 <br><h2 style="text-align:center;">All Books</h2><hr>
-<button (click) = "logout()" class = "btn btn-warning" style="margin-left: 1200px" data-toggle="tooltip" data-placement="bottom" title="please logout"> Logout</button><br>
+<a (click) = "logout()" class = "btn btn-warning" style="margin-left: 1200px" data-toggle="tooltip" data-placement="bottom" title="please logout">
+  <i class="material-icons"> settings_power</i>
+</a><br>
+
  <div class="row">
     <div *ngFor="let addbook of addbooks" class="col-md-5 col-xl-3">
       <hr> 
@@ -17,11 +20,15 @@
           </div>
           <ul class="list-group list-group-flush">
 
-            <li class="list-group-item list-group-item-warning"><i class="fa fa-envelope float-right"></i>Book Name: {{addbook.bookName}}</li>
+            <li class="list-group-item list-group-item-warning">
+              <i class="material-icons"> book</i><i class="fa fa-envelope float-right"></i>Book Name: {{addbook.bookName}}</li>
             <li class="list-group-item "><i class="fa fa-envelope float-right"></i>Description: {{addbook.description}}</li>
-             <li class="list-group-item "><i class="fa fa-phone float-right"></i>Price : {{addbook.price}}</li>
+             <li class="list-group-item ">
+              <i class="material-icons"> monetization_on</i><i class="fa fa-phone float-right"></i>Price : {{addbook.price}}</li>
           </ul>
-          <a class="btn btn-danger" (click)="onsubmit(addbook.bookName,addbook.price)" data-toggle="tooltip" data-placement="bottom" title="Click here to Buy">Buy Now</a>
+          <a class="btn btn-danger" (click)="onsubmit(addbook.bookName,addbook.price)" data-toggle="tooltip" data-placement="bottom" title="Click here to Buy">
+            Buy Now<i class="material-icons right"> shopping_cart</i>
+          </a>
           </div>
           </div>
           </div>

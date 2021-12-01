@@ -1,7 +1,8 @@
 <div class="alert alert-info" role="alert">
 <br><h2  style="text-align:center;">Books Info</h2><hr>
-<button (click) = "back()" class = "btn btn-secondary" style="margin-left: 1380px"
-data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;  
+<a (click) = "back()" class = "btn" style="margin-left: 1380px"
+data-toggle="tooltip" data-placement="bottom" title="Click here to go back">
+<i class="material-icons"> arrow_back</i></a>&nbsp;  
 <br>
  <div class="row">
     <div *ngFor="let addbook of addbooks" class="col-md-6 col-xl-3">
@@ -16,18 +17,24 @@ data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Bac
           </div>
           <ul class="list-group list-group-flush">
 
-            <li class="list-group-item  list-group-item-warning"><i class="fa fa-envelope float-right"></i>Book Name: {{addbook?.bookName}}</li>
+            <li class="list-group-item  list-group-item-warning">
+               <i class="material-icons"> book</i><i class="fa fa-envelope float-right"></i>Book Name: {{addbook?.bookName}}</li>
             <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Description: {{addbook?.description}}</li>
-             <li class="list-group-item"><i class="fa fa-phone float-right"></i>Price : {{addbook?.price}}</li>
-             <br>
-             <button (click) = "updateAddbook(addbook.id)" class = "btn btn-warning"
-             data-toggle="tooltip" data-placement="bottom" title="Click here to View Book details"> View</button>&nbsp;
-
-                <button (click) = "deleteAddbook(addbook.id)" class = "btn btn-danger"
-                data-toggle="tooltip" data-placement="bottom" title="Click here to Delete Book details"> Delete</button>
+             <li class="list-group-item">
+               <i class="material-icons"> monetization_on</i><i class="fa fa-phone float-right"></i>Price : {{addbook?.price}}</li>
+             
+               
           </ul>
 
           </div>
+          <button (click) = "updateAddbook(addbook.id)" class = "btn btn-outline-info btn-sm "
+             data-toggle="tooltip" data-placement="bottom" title="Click here to View Book details">
+             <i class="material-icons"> edit</i></button>
+             &nbsp;
+
+                <button (click) = "deleteAddbook(addbook.id)" class = "btn btn-outline-danger btn-sm "
+                data-toggle="tooltip" data-placement="bottom" title="Click here to Delete Book details">
+                <i class="material-icons"> delete_forever</i></button>
           </div>
           </div>
           </div>

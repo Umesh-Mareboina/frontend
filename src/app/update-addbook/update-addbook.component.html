@@ -4,6 +4,7 @@
     <form (ngSubmit) = "onSubmit()">
 
         <div class="form-group">
+            <i class="material-icons">book</i>&nbsp;
             <label> Book Name</label>
             <input type="text" class ="form-control" id = "bookName"
                 [(ngModel)] = "addbook.bookName" name = "bookName"
@@ -11,6 +12,7 @@
         </div>
     
         <div class="form-group">
+            <i class="material-icons ">insert_link</i>&nbsp;
             <label> Image </label>
             <input type="text" class ="form-control" id = "image" 
                 [(ngModel)] = "addbook.image" name = "image"
@@ -19,6 +21,7 @@
 
 
         <div class="form-group">
+            <i class="material-icons">monetization_on</i>&nbsp;
             <label> Price </label>
             <input type="text" class ="form-control" id = "price" 
                 [(ngModel)] = "addbook.price" name = "price"
@@ -27,6 +30,7 @@
 
        
         <div class="form-group">
+            <i class="material-icons">description</i>&nbsp;
             <label >Description</label>
             <textarea name = "description" class ="form-control" 
             [(ngModel)] = "addbook.description"
@@ -37,10 +41,12 @@
 
     
         <button class = "btn btn-danger" type ="submit"
-        data-toggle="tooltip" data-placement="bottom" title="Click here to Update">Update</button>&nbsp;
+        data-toggle="tooltip" data-placement="bottom" title="Click here to Update">Update
+        <i class="material-icons"> cached</i></button>&nbsp;
 
         <button href="addbook" class = "btn btn-dark"
-        data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>&nbsp;
+        data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back
+        <i class="material-icons"> arrow_back</i></button>&nbsp;
     </form>
     <br>
     </div> 

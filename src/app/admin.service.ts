@@ -19,7 +19,7 @@ export class AdminService {
 postAdminsList(): Observable<Admin[]>{
   return this.httpClient.get<Admin[]>(`${this.baseURL}`);
 }
-  admin(admin: Admin): Observable<Object>{                                       ///////user.service.ts
+  admin(admin: Admin): Observable<Object>{                                      
     return this.httpClient.post(`${this.baseURL}`+'/save-admin', Admin);
   }
 

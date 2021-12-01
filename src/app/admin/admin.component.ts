@@ -51,7 +51,7 @@ back(){
 }
   else
   {
-  alert("you missed below fields")
+  alert(" * Fields are Required")
 }
 
     };

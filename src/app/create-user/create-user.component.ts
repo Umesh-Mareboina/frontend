@@ -51,7 +51,7 @@ export class CreateUserComponent implements OnInit {
       this.saveUser();
     }
     else{
-      alert("You missed your data.....below fields are requied");
+      alert(" * Fields are Required");
     }
     // console.log(this.student);
     // this.saveStudent();
