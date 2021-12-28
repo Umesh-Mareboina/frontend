@@ -1,18 +1,19 @@
 <div class="alert alert-info" role="alert">
 <br>
+<mat-grid-list cols="4" rowHeight="4:1" style="height:140px">
 <h2 style=text-align:center;>Ordered User Info
     <i class="material-icons"> local_shipping</i></h2><hr>
 
 <section>
    
     <div class="example-button-row">
-     <a  (click) = "back()" class = "btn" style="margin-left: 1150px"
+     <a  (click) = "back()" class = "btn" 
       data-toggle="tooltip" data-placement="bottom" title="Click here to go back">
       <i class="material-icons">arrow_back</i></a> 
     </div>
   </section>
-  <br>
 
+</mat-grid-list>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   

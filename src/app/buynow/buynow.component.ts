@@ -73,5 +73,3 @@ export class BuynowComponent implements OnInit {
     }
   }
   
-
-

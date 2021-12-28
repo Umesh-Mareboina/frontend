@@ -1,9 +1,11 @@
 <div class="alert alert-info" role="alert">
+   <mat-grid-list cols="4" rowHeight="4:1" style="height:140px">
 <br><h2  style="text-align:center;">Books Info</h2><hr>
-<a (click) = "back()" class = "btn" style="margin-left: 1380px"
+<a (click) = "back()" class = "btn "
 data-toggle="tooltip" data-placement="bottom" title="Click here to go back">
-<i class="material-icons"> arrow_back</i></a>&nbsp;  
-<br>
+<i class="material-icons"> arrow_back</i></a>
+</mat-grid-list>
+
  <div class="row">
     <div *ngFor="let addbook of addbooks" class="col-md-6 col-xl-3">
        <hr>

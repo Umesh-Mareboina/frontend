@@ -12,18 +12,9 @@ export class AdminService {
   Admin=null;
   constructor(private httpClient: HttpClient) { }
   
-  getAdminsList(): Observable<Admin[]>{
-    return this.httpClient.get<Admin[]>(`${this.baseURL}`+'/admins');
-}
-
-postAdminsList(): Observable<Admin[]>{
-  return this.httpClient.get<Admin[]>(`${this.baseURL}`);
-}
   admin(admin: Admin): Observable<Object>{                                      
-    return this.httpClient.post(`${this.baseURL}`+'/save-admin', Admin);
+    return this.httpClient.post(`${this.baseURL}`, Admin);
   }
 
-  getAdminById(id: number): Observable<Admin>{
-    return this.httpClient.get<Admin>(`${this.baseURL}`+'/admins'+`/${id}`);
-  }
+
 }

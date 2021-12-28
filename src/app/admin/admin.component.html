@@ -1,65 +1,56 @@
-<div class="alert alert-info" role="alert">
-<br><br><div class="col-md-4 offset-md-4 ">
-    <br><h2 style="text-align:center;"> Admin Login </h2><hr>
-    <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+<html>
 
-        Successfully Login!
+  <head>
+    <title>Admin login</title>
+  </head>
 
-        <button (click)="closeAlert()"type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <body>
 
-          <span aria-hidden="true">&times;</span>
 
-        </button>
+    <div class="container" id="container">
 
+
+      <div class="form-container sign-in-container">
+        <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" required>
+          <h1 class="heading1">Admin login</h1>
+
+          <input type="email" title="Enter Admin Email Id"  type="text" align="center" formControlName="emailId" placeholder="Email" required />
+          <p class="error-msg" style="font-size:13px;"
+          *ngIf="reactiveForm.get('emailId')?.errors?.required && reactiveForm.get('emailId')?.untouched && reactiveForm.get('emailId')?.touched"
+          align="center">Email
+          is required</p>
+          <p class="err" style="font-size:13px;"
+          *ngIf="reactiveForm.get('emailId')?.errors?.pattern" align="center">Please Input a Valid Format</p>
+          
+    
+
+
+          <input type="password"  title="Enter Admin Password" type="password" align="center" formControlName="password" placeholder="Password" required />
+          <p class="error-msg" style="font-size:13px;"
+              *ngIf="reactiveForm.get('password')?.errors?.required && reactiveForm.get('password')?.untouched && reactiveForm.get('password')?.touched"
+              align="center">Password
+              is required</p>
+              <p class=" err" style="font-size:13px;"
+              *ngIf="reactiveForm.get('password')?.errors?.minlength" align="center">Please Input a Valid Password</p>
+     
+
+
+          <button class="submit" title="Click here to login" type="submit"  [disabled]="!reactiveForm.valid">Login</button>
+
+          <button (click) = "back()"data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>
+        </form>
       </div>
+      <div class="overlay-container">
+        <div class="overlay">
 
-   <form (ngSubmit) = "onSubmit()">
-        <div class="log">
-            <a><img src="../../assets/admin.png"  class="rounded-pill" alt=""
-                data-toggle="tooltip" data-placement="bottom" title="Admin Here"></a>
-            &nbsp;
-</div>
-        <div class="form-group">
-            <i class="material-icons">mail</i>&nbsp;
-            <label for="emailId" class="control-label"> Email Id
-                <span  class="required">
-                    *
-                 </span>
-            </label>
-            <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Your Email Id" pattern="^[a-z0-9._%+-]+@booksworld.com$"
-             #emailId="ngModel" [(ngModel)] = "admin.emailId"  type="email" class ="form-control"
-              data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id">
-            <small id="emailHelp" class="form-text">Admin email id is required.</small>
-               <span class="help-block btn-danger" *ngIf=errors.emailId>
-                    Please Input a Valid Email Id
-                </span>
-                
-        </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Admin!</h1>
+            <p>Please enter your details to login.</p>
 
-        <div class="form-group">
-            <i class="material-icons ">visibility</i>&nbsp;
-            <label for="password" class="control-label"> Password
-                <span  class="required">
-                    *
-                 </span>
-            </label>
-            <input type="password"  placeholder="Enter Your Password" class ="form-control" (input)="validatepassword()" id = "password" name="password"  minlength="7"
-            #password="ngModel" [(ngModel)] = "admin.password" data-toggle="tooltip" data-placement="bottom" title="Enter Your Password">
-                <span class="help-block btn-danger" *ngIf=err.password>
-                    Please Input a Valid Password
-                </span>
-            
+          </div>
         </div>
-    
-    <hr>
-        <button class = "btn btn-danger" type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Login">Login
-            <i class="material-icons ">login</i>
-        </button>&nbsp; 
-        <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go Back"> Back
-            <i class="material-icons ">arrow_back</i>
-        </button>&nbsp; 
-    </form>&nbsp;
-    </div> 
-    
+      </div>
     </div>
-    
+  </body>
+
+  </html>

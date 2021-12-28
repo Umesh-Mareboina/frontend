@@ -1,3 +1,106 @@
+<!-- <html>
+
+<head>
+  <link rel="stylesheet" href="buynow.component.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Login page</title>
+
+</head>
+
+
+
+<body>
+
+  <section class="login-page">
+
+    <div id="container-background">
+
+      <div id="container">
+        <!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Welcome...!</strong> You have sucessfully logged in.
+          <button (click)="goToNextPage()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <!-- <div class="main">
+
+          <p class="sign" >Buy Now!</p>
+
+         
+          <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" required>
+            <input class="em " title="Your selected book name" type="text" formControlName="bookName" placeholder="Book Name"  disabled>
+           
+      
+              <input class="em " title="Your first name and last name" type="text" formControlName="userName" placeholder="User Name"  disabled>
+           
+         
+        <input class="em " title="Your email Id" type="text" formControlName="emailId" placeholder="emailId"  disabled>
+
+     
+          <input class="em " title="Your selected book price" type="text"formControlName="price" placeholder="price"  disabled>
+
+          <input class="em " title="Enter your address" type="text"formControlName="address" placeholder="Address" >
+
+          <input class="em " title="Enter your mobile number" type="text"formControlName="phoneNumber" placeholder="Phone Number"  >
+             
+        <p class="err" style="font-size:13px;"
+        *ngIf="reactiveForm.get('phoneNumber')?.errors?.pattern" align="center">Please Enter your 10 digit mobile number </p>
+
+          <p class="error-msg" style="font-size:13px;"
+            *ngIf="reactiveForm.get('phoneNumber')?.errors?.required && reactiveForm.get('phoneNumber')?.touched">phone number
+            is required</p>
+      
+     
+            <input class="em " title="Enter your state" type="text"formControlName="state" placeholder="state"  >
+
+            <p class="err" style="font-size:13px;"
+            *ngIf="reactiveForm.get('state')?.errors?.pattern" align="center">Please Enter your state</p>
+    
+              <p class="error-msg" style="font-size:13px;"
+                *ngIf="reactiveForm.get('state')?.errors?.required && reactiveForm.get('state')?.touched">state
+                is required</p>
+          
+                <input class="em " title="Enter your city" type="text"formControlName="city" placeholder="city"  >
+
+                <p class="err" style="font-size:13px;"
+                *ngIf="reactiveForm.get('city')?.errors?.pattern" align="center">Please Enter your city</p>
+        
+                  <p class="error-msg" style="font-size:13px;"
+                    *ngIf="reactiveForm.get('state')?.errors?.required && reactiveForm.get('state')?.touched">city
+                    is required</p>
+              
+                    <input class="em " title="Enter your zip code" type="text"formControlName="zipCode" placeholder="zipcode">
+
+                    <p class="err" style="font-size:13px;"
+                    *ngIf="reactiveForm.get('zipCode')?.errors?.pattern" align="center">Please Enter your zipCode</p>
+            
+                      <p class="error-msg" style="font-size:13px;"
+                        *ngIf="reactiveForm.get('zipCode')?.errors?.required && reactiveForm.get('zipCode')?.touched">zipCode
+                        is required</p>
+                  
+          
+              <button class="submit" title="click here to Login" input type="submit" value="Submit"  [disabled]="!reactiveForm.valid" align="center">Buynow</button>
+            
+            <br>
+            <br>
+              <button  class="back" (click) = "back()" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>
+          
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html> -->
+
+
+
 <br><br>
 <div class="alert alert-info" role="alert">
 <div class="col-md-6 offset-md-3">
@@ -123,7 +226,7 @@
                 <i class="material-icons"> place</i>&nbsp;
                 <label>City</label>
         <input type="text" id="city" name="city"   class ="form-control"  [(ngModel)] = "Buynow.city"
-         data-toggle="tooltip" data-placement="bottom" title="Click Your City">
+         data-toggle="tooltip" data-placement="bottom" title="Enter Your City">
               </div>
             
 
@@ -136,7 +239,7 @@
               </div>
           
     <br>
-        <button class = "btn btn-danger col-md-4 " type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Order">Order
+        <button class = "btn btn-danger col-md-4 " type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Order a book">Order
           <i class="material-icons">shopping_bag</i>
         </button>&nbsp;
         <button (click) = "back()" class = "btn btn-secondary col-md-4" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back

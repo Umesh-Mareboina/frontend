@@ -1,4 +1,5 @@
 <div class="alert alert-info" role="alert">
+  <mat-grid-list cols="4" rowHeight="4:1" style="height:140px">
 <br><h2 style=text-align:center;>Registered User Info
 <i class="material-icons">supervisor_account</i></h2><hr>
 <!-- <button (click) = "back()" class = "btn btn-secondary" style="margin-left: 1150px"
@@ -52,12 +53,13 @@ data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Bac
   <section>
    
     <div class="example-button-row">
-     <a  (click) = "back()" class = "btn" style="margin-left: 1150px"
+     <a  (click) = "back()" class = "btn"
       data-toggle="tooltip" data-placement="bottom" title="Click here to go back">
       <i class="material-icons">arrow_back</i></a> 
     </div>
   </section>
-  <br>
+  </mat-grid-list>
+
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 

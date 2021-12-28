@@ -1,154 +1,105 @@
-<div class="alert alert-info" role="alert">
-<div  class="col-md-4 offset-md-4 " >
+<html>
 
-    <form (ngSubmit) = "onSubmit()">
-      <div class="log" >
-        <a><img src="../../assets/reg.jpg" class="rounded-pill" alt="" 
-          data-toggle="tooltip" data-placement="bottom" title="Register Here"></a>
-        </div>
-        
+<head>
+  <link rel="stylesheet" href="create-user.component.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <div class="form-group">
-          <i class="material-icons"> person</i>&nbsp;
-            <label > First Name
-              <span  class="required">
-                 *
-              </span>
-            </label>
-            <input type="text"  placeholder="Enter First Name" class ="form-control" id = "firstName" name="firstName"
-                [(ngModel)] = "user.firstName" 
-                data-toggle="tooltip" data-placement="bottom" title="Enter Your First Name">
-        </div>
-    <hr>
 
-        <div class="form-group">
-          <i class="material-icons"> person</i>&nbsp;
-            <label> Last Name
-              <span  class="required">
-                *
-             </span>
-            </label>
-            <input type="text" placeholder="Enter Last Name" class ="form-control" id = "lastName" name="lastName"
-                [(ngModel)] = "user.lastName"
-                data-toggle="tooltip" data-placement="bottom" title="Enter Your Last Name">
-                
-        </div>
-        <hr>
+</head>
 
-        <div class="form-group">
-          <i class="material-icons">malefemale</i>&nbsp;
-            <label>Gender
-              <span  class="required">
-                *
-             </span>
-            </label><br>
 
-            <div class="form-check form-check-inline mb-0 me-4">
-              <input
-                class="form-check-input"
-                [(ngModel)] = "user.gender"
-                type="radio"
-                name="gender"
-                id="gender"
-                value="Female"
-                data-toggle="tooltip" data-placement="bottom" title="Female"
-              />
-              <label class="form-check-label" for="femaleGender">Female</label>
-            </div>
 
-            <div class="form-check form-check-inline mb-0 me-4">
-              <input
-                class="form-check-input"
-                [(ngModel)] = "user.gender"
-                type="radio"
-                name="gender"
-                id="gender"
-                value="Male"
-                data-toggle="tooltip" data-placement="bottom" title="Male"
-              />
-              <label class="form-check-label" for="maleGender">Male</label>
-            </div>
+<body>
 
-            <div class="form-check form-check-inline mb-0">
-              <input
-                class="form-check-input"
-                [(ngModel)] = "user.gender"
-                type="radio"
-                name="gender"
-                id="gender"
-                value="Other"
-                data-toggle="tooltip" data-placement="bottom" title="Others"
-                />
-              <label class="form-check-label" for="otherGender">Others</label>
-            </div>
-          </div>
-          <hr>
+  <section class="register-page">
 
+    <div id="container-background">
+
+      <div id="container">
+     
+        <div class="main">
+
+          <p class="sign" >Register Now!</p>
+          <br>
+
+         
+            <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" required>
+            <input class="em " title="Enter your First Name" type="text" formControlName="firstName" placeholder="First Name"  required>
+           
+            <p class="error-msg" style="font-size:13px;"
+              *ngIf="reactiveForm.get('firstName')?.errors?.required && reactiveForm.get('firstName')?.touched">First Name is required</p>
+              
+          <p class="err" style="font-size:13px;"
+          *ngIf="reactiveForm.get('firstName')?.errors?.minlength" align="center">minimum length 5 characters</p>
+
+              
        
-        <div class="form-group">
-          <i class="material-icons"> mail</i>&nbsp;
-            <label for="emailId" class="control-label"> Email Id
-              <span  class="required">
-                *
-             </span>
-            </label>
-            <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Email Id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              [(ngModel)] = "user.emailId"  type="email" class ="form-control" 
-              data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id">
-            <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
-               <span class="help-block btn-danger" *ngIf=errors.emailId>
-                    Please Enter a Valid Email Id
-                </span>
+              <input class="em " title="Enter your Last Name" type="text" formControlName="lastName" placeholder="Last Name"  required>
+           
+              <p class="error-msg" style="font-size:13px;"
+                *ngIf="reactiveForm.get('lastName')?.errors?.required && reactiveForm.get('lastName')?.touched">Last Name
+                is required</p>
+
+                <p class="err" style="font-size:13px;"
+                *ngIf="reactiveForm.get('lastName')?.errors?.minlength" align="center">minimum length 5 characters</p>
+
+                    
                 
+         
+        <input class="em " title="Enter your gender" type="text" formControlName="gender" placeholder="Gender"  required>
+
+        
+           
+        <p class="error-msg" style="font-size:13px;"
+          *ngIf="reactiveForm.get('gender')?.errors?.required && reactiveForm.get('gender')?.touched">Gender
+          is required</p>
+          <p class="err" style="font-size:13px;"
+          *ngIf="reactiveForm.get('gender')?.errors?.minlength" align="center">Please Enter your gender </p>
+
+     
+          <input class="em " title="Enter your email id" type="text"formControlName="emailId" placeholder="Email"  required>
+             
+        <p class="err" style="font-size:13px;"
+        *ngIf="reactiveForm.get('emailId')?.errors?.pattern" align="center">Please Enter Valid Format </p>
+
+          <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small><br>
+          <p class="error-msg" style="font-size:13px;"
+            *ngIf="reactiveForm.get('emailId')?.errors?.required && reactiveForm.get('emailId')?.touched">Email Id
+            is required</p>
+      
+     
+              
+
+         
+            <input class="pass"  title="Enter your password" type="text" formControlName="password" placeholder="Password"  required>
+            <p class="error-msg" style="font-size:13px;"
+              *ngIf="reactiveForm.get('password')?.errors?.required && reactiveForm.get('password')?.touched" >password is required</p>
+             
+              <p class="err" style="font-size:13px;"
+              *ngIf="reactiveForm.get('password')?.errors?.pattern" align="center"> Please Enter Valid Format
+              <br>
+              <br><p class="mess">
+              at least one uppercase letter<br>
+              at least one lowercase letter<br>
+              at least one number(no matter the order)<br>
+              Minimum 8 characters</p></p>
+                  
+           
+          
+              <button class="submit" title="click here to Login" input type="submit" value="Submit"  [disabled]="!reactiveForm.valid" align="center">Register</button>
+            
+            <br>
+            <br>
+              <button  class="back" (click) = "back()" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>
+          
+
+          </form>
         </div>
-        <hr>
-
-
-        <div class="form-group">
-          <i class="material-icons"> security</i>&nbsp;
-          <label for="password" class="control-label"> Password
-            <span  class="required">
-              *
-           </span>
-          </label>
-          <input type="password"  placeholder="Enter Password" class ="form-control" (input)="validatepassword()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id = "password" name="password" minlength="8"
-         [(ngModel)] = "user.password"
-         data-toggle="tooltip" data-placement="bottom" title="Enter Your Password">
-          
-          <span class="help-block btn-danger" *ngIf=err.password>
-            Please Enter a Valid format<br>
-
-            <br><div class="message">
-              <p id="capital" class="invalid">at least one uppercase letter</p>
-            <p id="letter" class="invalid">at least one lowercase letter</p>
-            <p id="number" class="invalid">at least one number(no matter the order)</p>
-            <p id="length" class="invalid">Minimum 8 characters</p>
-            </div>
-          </span>
-          <hr>
-
-          <div class="form-group">
-            <i class="material-icons">visibility</i>&nbsp;
-            <label for="password" class="control-label"> Confirm Password</label>
-          <input type="password"  placeholder="Confirm Password" class ="form-control"  (input)="validatepassword()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id = "confirmPassword" name="confirmPassword" minlength="8"
-          [(ngModel)] = "user.confirmPassword"
-          data-toggle="tooltip" data-placement="bottom" title="Re-Enter Your Password">
-          
-          <span class="help-block btn-danger" *ngIf=err.password>
-            password doesn't match<br>
-          </span>
-          </div>
       </div>
+    </div>
+  </section>
 
-      <hr>
-    
-        <button class = "btn btn-danger" type ="submit" 
-        data-toggle="tooltip" data-placement="bottom" title="Register">Register
-        <i class="material-icons"> login</i></button>&nbsp;
-       <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back
-        <i class="material-icons"> arrow_back</i>
-       </button>&nbsp;
-    
-    </form>&nbsp;
-    </div> 
-</div>
+</body>
+
+</html>

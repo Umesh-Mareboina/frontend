@@ -14,6 +14,7 @@ import { AddbookService } from '../addbook.service'
 export class BooksComponent implements OnInit {
   login: any;
 addbooks:Addbook[];
+  
 
 
   constructor(private router: Router,private user : UserService,private loginService: LoginService,private addbookService: AddbookService,) { }
@@ -41,8 +42,9 @@ addbooks:Addbook[];
     // const user=this.loginService.loginUser;
     
     // console.log();
-    
+    console.log(this.loginService.loginUser);
       this.loginService.getUser(this.loginService.loginUser.emailId,this.loginService.loginUser.password).subscribe( data =>{
+
         const user=data;
         
         if(user?.firstName && user?.lastName)

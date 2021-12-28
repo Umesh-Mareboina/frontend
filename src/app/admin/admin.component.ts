@@ -1,40 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { Admin } from '../admin';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  providers : [AdminService]
 })
 export class AdminComponent implements OnInit {
 
-  errors={ emailId:false};
-  err={ password:false};
-  admin: Admin = new Admin();
-  alert:boolean=false;
+  errors={ emailId:false}
+  admin: Admin = {emailId:'',password:''};
+ 
   constructor(private adminService: AdminService,
-    private router: Router) { }
+    private router: Router,private fb: FormBuilder) { }
+    reactiveForm!: FormGroup;
 
   ngOnInit(): void {
+    this.reactiveForm = new FormGroup({
+      emailId: new FormControl('', [Validators.required,Validators.pattern('^[a-z0-9._%+-]+@booksworld.com')]),
+      password: new FormControl('', [Validators.required,Validators.minLength(7)])
+    })
   }
 
-back(){
-  this.router.navigate(['home'])
-}
-
-  saveAdmin(){
-    this.adminService.admin(this.admin).subscribe( data =>{
-      console.log(data);
-      this.adminService.Admin=this.admin;
-      this.goToAdminPage();
-    },
-    error => {
-      return console.log(error);
-    });
+  back(){
+    this.router.navigate(['home'])
   }
+  
+
+  // validateemailId(){
+
+  //   const pattern = /^[a-z0-9._%+-]+@booksworld.com/ ;
+
+  //    this.reactiveForm.value.emailId = !pattern.test(this.reactiveForm.value.emailId);
+  //   console.log(this.reactiveForm.value.emailId);
+  // }
 
   goToAdminPage(){
 
@@ -44,35 +48,13 @@ back(){
 
   onSubmit():void{
 
-    if (this.admin.emailId == 'abc@booksworld.com' && this.admin.password=='1234567')
-{
-  this.alert=true;
-     
-}
-  else
-  {
-  alert(" * Fields are Required")
-}
-
-    };
-    closeAlert(){
-      this.goToAdminPage();
-    }
-  validateemailId(){
-    
-    const pattern = /^[a-z0-9._%+-]+@booksworld.com$/ ;
-
-     this.errors.emailId = !pattern.test(this.admin.emailId);
-    console.log(this.errors.emailId);
-  }
-  validatepassword(){
-    
-    const pattern = /1234567/ ;
-    
-     this.err.password = !pattern.test(this.admin.password);
-    console.log(this.err.password);
-  }
- 
+    if(this.reactiveForm.value.emailId === 'abc@booksworld.com' && this.reactiveForm.value.password ==='1234567') {
+      alert('Welcome Admin! Successfully Logined...')
+      this. goToAdminPage();
+   } 
+  
+  
   
 }
 
+}

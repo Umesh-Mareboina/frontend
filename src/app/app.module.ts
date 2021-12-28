@@ -28,6 +28,8 @@ import { UpdateAddbookComponent } from './update-addbook/update-addbook.componen
 import { AddbookListComponent } from './addbook-list/addbook-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -55,14 +57,17 @@ import {MatTableModule} from '@angular/material/table';
     AddbookComponent,
     UpdateAddbookComponent,
     AddbookListComponent,
+    
    
   ],
   imports: [
     BrowserModule,
     MatTableModule,
+    MatGridListModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

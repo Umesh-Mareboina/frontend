@@ -11,6 +11,7 @@ export class LoginService {
   private baseURL = "http://localhost:9090/api";
   //registerLogin=null;
   loginUser=null;
+  // loginUser={emailId:null,password:null};
   constructor(private httpClient: HttpClient) { }
   
   getLoginsList(): Observable<Login[]>{

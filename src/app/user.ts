@@ -5,5 +5,5 @@ export class User {
     gender: string;             
     emailId: string;
     password: string;
-    confirmPassword?: string;
+  
 }

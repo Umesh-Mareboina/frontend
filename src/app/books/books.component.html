@@ -1,10 +1,15 @@
 <div class="alert alert-info" role="alert">
 <div class="col offset">
+ <mat-grid-list cols="4" rowHeight="4:1" style="height:140px">
+<br><h2 style="text-align:center;">All Books</h2>
+<hr>
 
-<br><h2 style="text-align:center;">All Books</h2><hr>
-<a (click) = "logout()" class = "btn btn-warning" style="margin-left: 1200px" data-toggle="tooltip" data-placement="bottom" title="please logout">
+<a (click) = "logout()" class = "btn " data-toggle="tooltip" data-placement="bottom" title="click here to logout">Logout
   <i class="material-icons"> settings_power</i>
 </a><br>
+
+</mat-grid-list>
+
 
  <div class="row">
     <div *ngFor="let addbook of addbooks" class="col-md-5 col-xl-3">
@@ -12,26 +17,32 @@
       <div class="card m-b-30">
           <div class="card-body row">
              <div class="card-img-top">
+              
                 <a href=""><img src= {{addbook.image}}  alt=""   class="rounded mx-auto d-block"  style="margin:5px; max-height:200px; max-width:200px;"
                   data-toggle="tooltip" data-placement="bottom" title="{{addbook.bookName}}"></a>
-    
+  
             </div>
 
           </div>
           <ul class="list-group list-group-flush">
-
+        
             <li class="list-group-item list-group-item-warning">
               <i class="material-icons"> book</i><i class="fa fa-envelope float-right"></i>Book Name: {{addbook.bookName}}</li>
+           
             <li class="list-group-item "><i class="fa fa-envelope float-right"></i>Description: {{addbook.description}}</li>
              <li class="list-group-item ">
           <i class="material-icons"> money</i><i class="fa fa-phone float-right"></i>Price : {{addbook.price}}</li>
+        
           </ul>
-          <a class="btn btn-danger" (click)="onsubmit(addbook.bookName,addbook.price)" data-toggle="tooltip" data-placement="bottom" title="Click here to Buy">
+          <a class="btn btn-danger" (click)="onsubmit(addbook.bookName,addbook.price)" data-toggle="tooltip" data-placement="bottom" title="Click here to buy a book">
             Buy Now<i class="material-icons right"> shopping_cart</i>
+            
           </a>
           </div>
           </div>
           </div>
+        
+         
           </div>
       &nbsp;
 </div>

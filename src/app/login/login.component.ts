@@ -1,31 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Login } from '../login';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+
 })
 
 export class LoginComponent implements OnInit {
 
+  
   errors={ emailId:false};
-  login: Login = new Login();
-  constructor(private loginService: LoginService,
+  login: Login = {emailId:'',password:''};
+ 
+  
+  constructor(private loginService: LoginService,private fb: FormBuilder,
     private router: Router) { }
+    reactiveForm!: FormGroup;
 
   ngOnInit(): void {
+    this.reactiveForm = new FormGroup({
+      emailId: new FormControl('', [Validators.required,Validators.pattern('^[a-z0-9._%+-]+@gmail+\.[a-z]{3,4}$')]),
+      password: new FormControl('', [Validators.required,Validators.minLength(7)])
+    })
   }
   back(){
     this.router.navigate(['home'])
   }
+
+  goToBooks(){
+    this.router.navigate(['/books']);
+  }
   
   save(){
-    this.loginService.getUser(this.login.emailId,this.login.password).subscribe( data =>{
-      console.log(data);
-      this.loginService.loginUser=this.login;
+    this.loginService.getUser(this.reactiveForm.value.emailId , this.reactiveForm.value.password).subscribe( data =>{
+      // console.log(data);
+      this.loginService.loginUser=this.reactiveForm.value;
+  
+      console.log(this.loginService.loginUser);
       this.goToBooks();
     },
     error => {
@@ -33,47 +50,22 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  goToBooks(){
-    this.router.navigate(['/books']);
-  }
-
- 
-  
-  // onSubmit(){
-  //   if(!this.errors.emailId && this.login.password)
-  //   {
-      
-  //     console.log(this.login);
-  //     this.saveLogin();
-  //   }
-  //   else{
-  //     alert('Please Register..');
-  //     this.router.navigate(['create-user'])
-  //   }
-  //   // console.log(this.student);
-  //   // this.saveStudent();
-  // }
-  validateemailId(){
-    
-    const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ ;
-
-     this.errors.emailId = !pattern.test(this.login.emailId);
-    console.log(this.errors.emailId);
-  }
   onSubmit() {
-       if(this.login.emailId && this.login.password)
-    {
-    
-      console.log(this.login);
-      
-      this.save();
+   
+  
+  //   if(this.reactiveForm.value.emailId  && this.reactiveForm.value.password) {
+  //     this.loginService.loginUser ={emailId:this.reactiveForm.value.emailId,password:this.reactiveForm.value.password};
+  //     console.log(this.loginService.loginUser);
+  //     alert('Welcome! Successfully Logined..')
+  //     this. goToBooks();
+  //  } 
 
-    }
-    else{
-      alert(" * Fields are Required");
-      
-    }
-
+   if(this.reactiveForm.value.emailId && this.reactiveForm.value.password)
+   {
+   
+     console.log(this.reactiveForm.value);
+     
+     this.save();
   //   console.log('hi this is onsubmit')
 
   //   console.log(this.login.emailId);
@@ -91,6 +83,5 @@ export class LoginComponent implements OnInit {
   // });
 
    }
-
-  
+  }
 }

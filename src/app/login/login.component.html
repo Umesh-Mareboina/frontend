@@ -1,61 +1,82 @@
-&nbsp;
-<div class="alert alert-info" role="alert">
-<br><br><div class="col-md-4 offset-md-4">
-    <br><h2 style="text-align:center;"> Login Here</h2>
-    <hr>
+<html>
+
+<head>
+  <link rel="stylesheet" href="login.component.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Login page</title>
+
+</head>
 
 
-    <form (ngSubmit) = "onSubmit()">
-        <div class="log">
-            <a><img src="../../assets/admin.png" class="rounded-pill" alt=""
-                data-toggle="tooltip" data-placement="bottom" title="Login Here"></a>
-            &nbsp;
-            </div>
-        <div class="form-group">
-            <i class="material-icons"> mail</i>&nbsp;
-            <label for="emailId" class="control-label"> Email Id
-                <span  class="required">
-                    *
-                 </span>
-            </label>
-            <input  id = "emailId" name="emailId"  (input)="validateemailId()" placeholder="Enter Your Email Id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-             #emailId="ngModel" [(ngModel)] = "login.emailId"  type="email" class ="form-control"
-             data-toggle="tooltip" data-placement="bottom" title="Enter Your Email Id" >
-            <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
-               <span class="help-block btn-danger" *ngIf=errors.emailId>
-                    Please Input a Valid Email Id
-                </span>
-                
-        </div>
-        <hr>
 
-        <div class="form-group">
-            <i class="material-icons">security</i>&nbsp;
-            <label> Password
-                <span  class="required">
-                    *
-                 </span>
-            </label>
-            <input type="password"  placeholder="Enter Your Password" class ="form-control" id = "password" name="password" minlength="8"
-                [(ngModel)] = "login.password" data-toggle="tooltip" data-placement="bottom" title="Enter Your Password">
-            </div>
-    <hr>
-        <button class = "btn btn-danger" type ="submit" data-toggle="tooltip" data-placement="bottom" title="Click here to Login">Login
-            <i class="material-icons"> login</i>
-        </button>&nbsp;
-        <button (click) = "back()" class = "btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Click here to go Back"> Back
-            <i class="material-icons"> arrow_back</i>
-        </button>&nbsp; 
-<br><br>
+<body>
+
+  <section class="login-page">
+
+    <div id="container-background">
+
+      <div id="container">
+        <!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Welcome...!</strong> You have sucessfully logged in.
+          <button (click)="goToNextPage()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="main">
+
+          <p class="sign" >Login here!</p>
+
+         
+            <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" required>
+            <input class="em " title="Enter your email id" type="text"  formControlName="emailId" placeholder="Email"  required>
+           
+            
+      
+            <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small><br>
+            <p class="error-msg" style="font-size:13px;"
+              *ngIf="reactiveForm.get('emailId')?.errors?.required && reactiveForm.get('emailId')?.touched">Email
+              is required</p>
+              
+          <p class="err" style="font-size:13px;"
+          *ngIf="reactiveForm.get('emailId')?.errors?.pattern" align="center">please input a valid format</p>
+          
+    
+
+
+            <input class="pass"  title="Enter your password" type="text" formControlName="password" placeholder="Password"  required>
+            <p class="error-msg" style="font-size:13px;"
+              *ngIf="reactiveForm.get('password')?.errors?.required && reactiveForm.get('password')?.touched" >Password
+              is required</p>
+              <p  class ="err"style="font-size:13px;"
+              *ngIf="reactiveForm.get('password')?.errors?.minlength" align="center">Please Input a Valid Password</p>
+
+
+          
+              <button class="submit" title="click here to Login" input type="submit" value="Submit"  [disabled]="!reactiveForm.valid" align="center">Login</button>
+            
+            <br>
+            <br>
+              <button  class="back" (click) = "back()" data-toggle="tooltip" data-placement="bottom" title="Click here to go back"> Back</button>
+          
+
 <br>
-    <a href="create-user"class="create" data-toggle="tooltip" data-placement="bottom" title="Click here to register!">Click here to register!
-        <i class="material-icons">person_pin</i>
-    </a>
+<br>
+<div class="text-center">
+              <h3>Don't have an account?
+              <a href="create-user"class="create" data-toggle="tooltip" data-placement="bottom" title="Click here to register!">Register Now
+                <i class="material-icons">person_pin</i>
+            </a>
+             </h3>
 
-       
-
-    
-    </form>&nbsp;
-    </div> 
+          </div>
+          </form>
+        </div>
+      </div>
     </div>
-    
+  </section>
+
+</body>
+
+</html>
